@@ -17,7 +17,7 @@ const Expenseform = (props) => {
     };
 
     try {
-      const response = await fetch("http://192.168.44.128:5000/api/expenses", {
+      const response = await fetch("http://13.61.13.240:5000/api/expenses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -95,5 +95,6 @@ const Expenseform = (props) => {
 };
 
 export default Expenseform;
+
 
 
