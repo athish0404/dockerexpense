@@ -10,7 +10,7 @@ const Expensetracker = () => {
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
-        const res = await fetch("http://192.168.44.128:5000/api/expenses");
+        const res = await fetch("http://13.61.13.240:5000/api/expenses");
         const data = await res.json();
         setExpenseList(data);
       } catch (error) {
@@ -24,7 +24,7 @@ const Expensetracker = () => {
   // ✅ Add to backend
   const addExpense = async (newExpense) => {
     try {
-      const response = await fetch("http://192.168.44.128:5000/api/expenses", {
+      const response = await fetch("http://13.61.13.240:5000/api/expenses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -43,7 +43,7 @@ const Expensetracker = () => {
   // ❌ Delete from backend
   const deleteExpense = async (id) => {
     try {
-      const res = await fetch(`http://192.168.44.128:5000/api/expenses/${id}`, {
+      const res = await fetch(`http://13.61.13.240:5000/api/expenses/${id}`, {
         method: "DELETE"
       });
 
@@ -59,7 +59,7 @@ const Expensetracker = () => {
   // ✏️ Update in backend
   const editExpense = async (id, updatedData) => {
     try {
-      const res = await fetch(`http://192.168.44.128:5000/api/expenses/${id}`, {
+      const res = await fetch(`http://13.61.13.240:5000/api/expenses/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -81,7 +81,7 @@ const Expensetracker = () => {
   const clearAllExpenses = async () => {
     if (window.confirm("Are you sure you want to clear all expenses?")) {
       for (let expense of expenseList) {
-        await fetch(`http://192.168.44.128:5000/api/expenses/${expense._id}`, {
+        await fetch(`http://13.61.13.240:5000/api/expenses/${expense._id}`, {
           method: "DELETE"
         });
       }
@@ -119,3 +119,4 @@ const Expensetracker = () => {
 };
 
 export default Expensetracker;
+
